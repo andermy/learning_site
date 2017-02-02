@@ -22,4 +22,7 @@ urlpatterns = [
     url(r'^courses/', include('courses.urls')),
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.hello_world),
+    url(r'^api-path/', include('rest_framework.urls',
+                               namespace='rest_framework')),
+    url(r'^api/v1/courses/', include('courses.urls', namespace='courses'))
 ]
